@@ -1,9 +1,14 @@
 import React from 'react'
 
-function Footer() {
+const styles = {
+    textAlign: "center",
+    color: "purple"
+}
+
+function Footer(props) {
     return (
         <footer>
-            <h3><font color='#3AC1EF'>This is my footer element</font> </h3>
+            <h3 style={styles}>{props.description}</h3>
         </footer>
     )
 }
