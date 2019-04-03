@@ -4,23 +4,32 @@ import ToDoItem from "./ToDoItem"
 import Footer from "./Footer"
 import elems from './elems'
 
-function App() {
-  const elemComp = elems.map(elem =>
-      <Footer key = {elem.id} description = {elem.description} />
-  )
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            todos:elems
+        }
+    }
 
-  return (
-      <div>
-          <Header/>
-          <div className="todo-list">
-              <ToDoItem/>
+    render() {
+        const elemComp = this.state.todos.map(elem =>
+        <Footer key = {elem.id} description = {elem.description} />
+        )
+
+    return (
+        <div>
+            <Header/>
+            <div className="todo-list">
                 <ToDoItem/>
                 <ToDoItem/>
                 <ToDoItem/>
-          </div>
-          {elemComp}
-      </div>
-  )
+                <ToDoItem/>
+            </div>
+              {elemComp}
+        </div>
+    )
+  }
 }
 
 export default App;

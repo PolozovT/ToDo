@@ -1,16 +1,20 @@
 import React from 'react'
 
 const styles = {
-    textAlign: "center",
+    margin: "auto",
     color: "purple"
 }
 
-function Footer(props) {
+class Footer extends React.Component{
+    render() {
+
     return (
         <footer>
-            <h3 style={styles}>{props.description}</h3>
+            <h3 style={styles}>{this.props.description}</h3>
         </footer>
     )
+
+    }
 }
 
 export default Footer
